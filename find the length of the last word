@@ -1,0 +1,12 @@
+class Solution:
+    def lengthOfLastWord(self, s: 'str') :
+        if len(s) == 0 or s == '':
+            return 0
+        maxlen = len(s)
+        while maxlen > 0 and s[maxlen-1] == ' ':
+            maxlen -= 1
+        for i in range(maxlen-1, -1, -1):
+           if s[i] == ' ':
+                return maxlen - 1 - i
+              
+        return maxlen
